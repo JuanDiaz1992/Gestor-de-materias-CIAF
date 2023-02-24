@@ -1,0 +1,53 @@
+{% load static %}
+
+<header class="header">
+
+
+        <nav class="nav">
+            <img src="{% static 'img/Ciaf.png' %}" class="Ciaf" alt="">
+            <ul class="row">
+                <li> 
+                    <a class="usuario" href="{% url 'gestion__cursos'%}">
+                        <i class="fa-solid fa-house icon"></i><p>Inicio</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="usuario" href="#">
+                        <i class="fa-regular fa-address-book icon"></i>
+                        <p>contacto</p>
+                    </a>
+                </li>
+                
+                    {% if request.user.is_authenticated %}
+                <div class="dropdown">
+                        <a class="usuario" href="">
+                            <i class="fa-regular fa-user icon"></i>
+                            <p>{{user.estudiante.nombre1}} {{user.estudiante.primerApellido}}</p>
+                        </a>
+                    <div class="dropdown-content">
+                        <a class="cerrarSesion" href="{% url 'logout' %}">Cerrar Sesión</a>
+                    </div>
+                </div>
+                    {% else %}
+                <li>
+                    <a class="usuario" href="{% url 'login'%}">
+                        <i class="fa-solid fa-address-card icon"></i> 
+                        <p>Logueate</p> 
+                    </a>
+                </li>
+                <li>
+                    <a class="usuario" href="{% url 'register'%}">
+                        <i class="fa-solid fa-registered icon"></i>
+                        <p>Registrate</p>
+                    </a>
+                </li>
+                    {% endif %}                
+            </ul>
+        </nav>
+
+
+</header>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "plantillaPadre.html" %}
+{% load static %}
+
+{% block content %}
+<section class="section_form_register">
+    <form class="register-user" method="POST">{% csrf_token %}  
+        <h5>Bienvenido</h5>
+        {{ form.as_p }}
+    
+    
+    <button class="buttons" type="submit">Registrate</button>
+    <a href="{% url 'login'%}">Si ya estás registrado has click aquí</a>
+    
+
+    </form>
+</section>
+
+{% endblock %}

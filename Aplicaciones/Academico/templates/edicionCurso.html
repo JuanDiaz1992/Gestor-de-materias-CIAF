@@ -1,0 +1,28 @@
+{% extends "plantillaPadre.html" %}
+{% load static %}
+    {% block content %}
+    <section class="section1">
+        <div class="container">
+            <div class="form__content edicionC">
+                <div>
+                    <h2 class="tittle_edicion">Edición de Curso</h2>
+                </div>
+                <form class="form_Registro" id="form_Registro" action="/editarCurso/" method="POST"> {% csrf_token %}
+                    
+                    <input type="hidden" name="txtId" value="{{curso.id}}">
+                    <input type="text" name="txtNombre" id="txtNombre" value="{{curso.nombre}}" placeholder="Nombre" minlength="3" maxlength="30" required autofocus>
+                    <label for="Creditos">
+                        <p>Creditos</p>
+                        <input type="number" name="txtCreditos" value="{{curso.creditos}}" min="1" max="10" value="1" required>
+                    </label>
+                    
+                    <button type="submit" class="boton guardar">Guardar</button>
+                </form>
+            </div>
+    
+        </div>
+    </section>
+
+    <script src="{% static 'js/gestionCursos.js' %}"></script>
+
+    {% endblock %}

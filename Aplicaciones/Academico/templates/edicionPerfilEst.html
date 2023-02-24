@@ -1,0 +1,26 @@
+{% extends "plantillaPadre.html" %}
+{% load static %}
+    {% block content %}
+    <section class="section1">
+        <div class="container">
+            <div class="form__content edicionC">
+                <div>
+                    <h2 class="tittle_edicion">Edición de perfil</h2>
+                </div>
+                <form class="form_Registro" method="post"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                        
+
+
+                    
+                    <button type="submit" class="boton guardar">Guardar</button>
+                </form>
+            </div>
+    
+        </div>
+    </section>
+
+    <script src="{% static 'js/gestionCursos.js' %}"></script>
+
+    {% endblock %}

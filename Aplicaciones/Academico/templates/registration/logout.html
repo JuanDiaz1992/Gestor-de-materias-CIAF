@@ -1,0 +1,40 @@
+{% extends "plantillaPadre.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styleheets/logoutEnd.css' %}">
+
+</head>
+<section class="form_container">
+    <div class="form-register">
+        <picture>
+            <img src="{% static 'img/Ciaf.png' %}" class="logo_login" alt="">
+        </picture>
+        <div class="invalido">
+            <p>Te has deslogueado del sistema</p>
+        </div>
+        <button class="botons" ><a class="link-boton" href="{% url 'login'%}">Logueate de nuevo</a></button>
+        
+        <div class="links_container">
+            <p><a href="{% url 'register'%}">¿No tiene cuenta? registrarte</a></p>
+        </div>
+        
+
+        <div class="redes_container--principal">
+            <p class="estamos">Estamos en:</p>
+            <div>
+                <a href="https://www.instagram.com/comunidadciaf/" target="blank">
+                    <i class="fa-brands fa-instagram redsocial-1"></i>
+                </a>
+                <a href="https://twitter.com/ComunidadCIAF" target="blank">
+                    <i class="fa-brands fa-twitter redsocial-2"></i>
+                </a>
+                <a href="https://web.facebook.com/ComunidadCIAF?_rdc=1&_rdr" target="blank">
+                    <i class="fa-brands fa-facebook redsocial-3"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

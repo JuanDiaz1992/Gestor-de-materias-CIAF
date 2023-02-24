@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="short icon" href="{% static 'img/Ciaf.png' %}">
+    <script src="https://kit.fontawesome.com/5c61cfe63f.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                                <!--ESTILOS CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'styleheets/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styleheets/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styleheets/gestionCursos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styleheets/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styleheets/registrer.css' %}">
+
+                                <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/5c61cfe63f.js" crossorigin="anonymous"></script>
+
+
+                                <!--Fonts Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Montserrat:wght@100;300&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+
+
+    <title>{{ titulo }}</title>
+</head>
+<body>
+    
+        {% include "nav.html" %}
+
+
+        {% block content %}
+        {% endblock %}
+
+</body>
+</html>

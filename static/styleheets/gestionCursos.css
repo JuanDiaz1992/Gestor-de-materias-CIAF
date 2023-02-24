@@ -1,0 +1,361 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.section1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    height: 100%;
+    background-image: linear-gradient(to top, #ffffff, #e3e1f6, #c5c4ee, #a4a8e6, #7e8ede, #6783d6, #4c79cf, #266fc7, #206fbd, #216eb2, #276da6, #2f6c9b);
+}
+
+
+
+
+/**********Panel contenedor**********/
+.container{
+    width: 80%;
+    height: 70vh;
+}
+
+/**********Paneles hijos**********/
+
+.form__content{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    max-height: 650px;
+    padding: 10px;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px 0 0 15px;
+    position: relative;
+}
+
+.section1__content{
+    width:100%;
+    max-width: 680px;
+    height: 100%;
+    max-height: 650px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px;
+    border-radius: 0 15px 15px 0;
+    background: rgba( 74, 144, 226, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+
+/********Info Usuario**/
+
+.bienvenida{
+    font-size: 19px;
+    color: #18A2B9;
+    font-family: sans-serif;    
+    margin: 12px 0px 25px 12px;
+}
+.usuarioLogueado{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(224, 224, 224);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.usuarioLogueado--text p{
+    font-family: sans-serif;  
+    margin: 2px 0px 4px 12px;
+}
+.subtitulo{
+    font-size: 12px;
+}
+
+.contenedor_foto{
+    position: relative;
+}
+.foto_usuario{
+    width: 75px;
+    border-radius: 50%;
+}
+
+.fa-camera-retro{
+    color: white;
+    font-size: 15px;
+
+}
+
+.cambiarFotoPerfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #3a3b3c;
+    
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    transition: background-color .3s linear;
+}
+
+.cambiarFotoPerfil:hover{
+    background-color: #504f4f;
+}
+
+/*****************Agregar Materias****************/
+
+.form_Registro{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    background: rgb(224, 224, 224);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.699);
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+
+}
+
+
+.AgregarH4{
+    font-family: sans-serif; 
+    font-weight: 0; 
+}
+
+label{
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+
+
+.guardar{
+    background: rgb(57 69 217 / 61%);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11px );
+    -webkit-backdrop-filter: blur( 11px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.guardar:hover{
+    background-color: rgba(41, 52, 201, 0.842);
+}
+
+input{
+    font-family: sans-serif;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+
+.confi_content{
+    display: flex;
+
+}
+.confi_content p, .confi_content i{
+    color: #a7a7a7;
+    margin-left: 6px;
+}
+
+/****Tablas Materias*******/
+
+
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.saludo_container{
+    margin-bottom: 15px;
+}
+.saludo{
+    color:white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 10px;
+}
+
+
+.section1__content--table{
+    border-collapse: collapse;
+    width: inherit;
+    height: fit-content;
+
+    
+
+}
+.titleTableContainer{  
+    padding: 25px;
+
+    color: white;
+    background: rgba( 74, 144, 226, 0.5 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6.5px );
+-webkit-backdrop-filter: blur( 6.5px );
+
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+.docente {
+    overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+td, th {
+    padding: 15px;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    font-size: 13px;
+}
+tr:nth-child(even){
+    background-color: #164e7a;
+
+}
+
+
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+.boton{
+    color: black;
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.editar{
+    background-color: #18A2B9 ;
+    margin: 5px;
+}
+.eliminar{
+    background-color: #DC3545 ;
+    margin: 5px;
+}
+.editar:hover{
+    background-color: #1cc1df ;
+}
+.eliminar:hover{
+    background-color: #fc3f52 ;
+}
+
+
+/*********Paginador******/
+
+.paginacion{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+}
+.paginacion__item{
+    width: fit-content;
+    padding: 10px;
+
+    color: rgb(255, 255, 255);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.navegadorP{
+    border-radius: 5px 0 0 5px;
+}
+.navegadorN{
+    border-radius: 0 5px 5px 0;
+}
+
+.active{
+    background-color: rgb(53, 116, 211);
+    color:white;
+
+
+}
+.disable{
+    color: rgb(131, 131, 131);
+}
+
+
+/********Edicion De curso******/
+
+.edicionC{
+    border-radius: 15px;
+    padding: 25px;
+    width: 350px;
+    height: fit-content;
+}
+
+.tittle_edicion{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #18A2B9;
+    padding-bottom: 20px;
+}
+
+
+/*************ConfPErfil*******/
+
+input[type="file"]#id_foto {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    }
+
+label[for="id_foto"]  {
+    font-size: 14px;
+    color: #fff;
+    background-color: #298cc5;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 15px 40px !important;
+    width: fit-content;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.centrar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edicion{
+    width: 150px;
+}
+
+#id_nombre{
+    width: 143px;
+}

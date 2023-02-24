@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>taller</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styleheets/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styleheets/logout.css' %}">
+</head>
+</head>
+<body>
+    <section class="form-register">
+        <h4>Bienvenido</h4>
+        <div class="invalido">
+            {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+            <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <button class="botons" ><a class="link" href="{% url 'login'%}">Iniciar Sesión</a></button>
+        <a class="link" href="#">¿perdiste tu contraseña?</a>
+        <a class="link" href="#">¿No tienes Cuenta? Registrate aquí </a>
+    </section>
+</body>
+    
+

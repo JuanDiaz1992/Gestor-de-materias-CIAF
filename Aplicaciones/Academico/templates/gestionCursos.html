@@ -1,0 +1,101 @@
+{% extends "plantillaPadre.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="section1">
+        <div class="container">
+            <div class="form__content"> 
+                <div>
+                    <div>
+                        <h2 class="bienvenida">Gestor de cursos.</h2>  
+                    </div> 
+                    <div class="usuarioLogueado">
+                        <picture class="contenedor_foto">
+                            <img class="foto_usuario" src="{{ user.estudiante.foto.url }}" alt="Foto usuario">
+                            <a class="cambiarFotoPerfil" href="{% url 'cambiarPerfil' %}"><i class="fa-solid fa-camera-retro"></i></a>
+                        </picture>
+                        <div class="usuarioLogueado--text">
+                            <p>{{user.estudiante.nombre1}} {{user.estudiante.primerApellido}}</p>
+                            <p class="subtitulo">Estudiante del semestre: {{user.estudiante.semestre}}</p>  
+                        </div>
+                    </div>
+                </div>
+                <div class="form_Registro">
+                    <a class="boton guardar" href="{% url 'agregarCurso' %}">+Agregar Materias</a>
+                </div>
+                
+                <div class="confi">
+                    <a href="{% url 'ModificarPerfil' %}" class="confi_content">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>Configuración</p>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="section1__content">
+                <div class="saludo_container">
+                    <h3 class="saludo">Hola {{ user.estudiante }}</h3>
+                    <p class="saludo">Estos son tus cursos actuales:</p>
+                </div>
+                <table class="section1__content--table">
+                    <thead>
+                        {% if object_list %}
+                        <tr class="titleTableContainer">
+                            <th> # </th>
+                            <th>Cursos</th>
+                            <th>Creditos</th>
+                            <th>Docente</th>
+                            <th colspan="2">Opciones</th>
+                        </tr>    
+                        {% else %}
+                        {%endif%}
+                    </thead>
+                    <tbody>
+                                                
+                        {% for i in object_list %}
+                            
+                        <tr class="content__item">
+                            <td class="contador">{{forloop.counter}}</td>
+                            <td class="nombreItem">{{i.nombre}}</td>
+                            <td class="creditosItem">{{i.creditos}}</td>
+                            <td class="creditosItem docente">{{i.docente}}</td>
+                            <td><a href="edicionCurso/{{i.id}}" class="boton editar">Editar</a></td>
+                            <td><a href="eliminacionCurso/{{i.id}}" class="boton eliminar">Eliminar</a></td>
+                        </tr>   
+                        {% empty %}
+                            <p class="saludo">No tienes materias asignadas aún</p>        
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <!----------Paginación--------->
+                
+                {% if is_paginated %}
+                    <div class="paginacion">
+                        {% if page_obj.has_previous %}
+                            <a class="paginacion__item navegadorP" href="?page={{ page_obj.previous_page_number }}">Previus</a>
+                        {% else %}
+                            <a class="paginacion__item navegadorP disable" href="#">Previus</a>
+                        {% endif %}  
+
+                        
+                        {% for i in paginator.page_range %}
+                            <a class="paginacion__item {% if page_obj.number == i %} active {% endif %}" href="?page={{ i }}">{{i}}</a>
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <a class="paginacion__item navegadorN" href="?page={{ page_obj.next_page_number }}">Next</a>
+                        {% else %}
+                            <a class="paginacion__item navegadorN disable" href="#">Next</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'js/gestionCursos.js' %}"></script>
+
+{% endblock %}
